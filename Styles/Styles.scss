@@ -1,0 +1,840 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&family=Raleway:wght@100;300;500;900&display=swap');
+@import './MediaQ.scss';
+
+$color-white: #fff;
+$color-black: #000 ;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+// MAIN SECTION
+.main {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.829), rgba(0, 0, 0, 0.712)), url(../Assets/background-image.webp);
+    background-attachment: fixed;
+    position: relative;
+
+    // WHATSAPP 
+    .whatsapp {
+        width: auto;
+        height: auto;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        transition: 0.6s;
+        animation-name: fadeInRight;
+        animation-duration: 2s;
+
+        img {
+            width: 130px;
+            transition: 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                scale: 0.9;
+            }
+        }
+    }
+
+    .whatsapp-message {
+        width: 230px;
+        height: 30px;
+        background-color: white;
+        position: absolute;
+        right: 110px;
+        bottom: 50px;
+        display: flex;
+        border-radius: 17px;
+        transition: 0.6s;
+        animation: fadeInRight ;
+        animation-duration: 1.5s ;
+
+        .whatsapp-message-1 {
+            width: 92%;
+            height: 100%;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                font-family: 'Rajdhani', sans-serif;
+                margin-left: 15px;
+                font-weight: 900;
+            }
+        }
+
+        .whatsapp-message-2 {
+            width: 21px;
+            height: 21px;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            right: 0;
+            top: 4px;
+            rotate: 45deg;
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+    }
+
+    // NAVBAR
+    .nav {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        animation: fadeInDown;
+        animation-duration: 2s;
+
+        .title {
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 500;
+                font-size: 40px;
+                padding: 0;
+                margin: 0;
+                color: $color-white;
+
+                @include mobile2 {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .links {
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include tablet2 {
+                display: none;
+            }
+
+            ul {
+                width: auto;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                list-style: none;
+
+                li a {
+                    text-decoration: none;
+                    color: $color-white;
+                    font-family: 'Rajdhani', sans-serif;
+                    font-weight: 500;
+                    font-size: 30px;
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.438);
+                    }
+                }
+            }
+        }
+
+        .btn {
+            width: auto;
+            height: auto;
+            display: none;
+            cursor: pointer;
+
+            @include tablet2 {
+                display: block;
+            }
+
+            i {
+                font-size: 40px;
+                color: $color-white;
+            }
+        }
+    }
+
+    // NAV MOBILE
+    .navMobile {
+        width: 100%;
+        height: 100vh;
+        background-color: $color-black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .title {
+            display: none;
+        }
+
+        .btn {
+            position: absolute;
+            right: 8%;
+            top: 25px;
+
+            i {
+                font-size: 40px;
+                color: $color-white;
+                cursor: pointer;
+            }
+        }
+
+        .links ul {
+            list-style: none;
+            padding: 0;
+
+            li a {
+                color: $color-white;
+                text-decoration: none;
+                font-size: 40px;
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .main-container {
+        width: 100%;
+        height: calc(100vh - 100px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .info {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            animation: fadeInDown;
+            animation-duration: 3s;
+
+            .hi {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+            }
+
+            p {
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 500;
+                font-size: 40px;
+                margin: 0;
+                color: $color-white;
+
+                @include mobile2 {
+                    font-size: 35px;
+                }
+            }
+
+            h1 {
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 900;
+                font-size: 70px;
+                margin: 0;
+                color: $color-white;
+
+                @include mobile2 {
+                    font-size: 50px;
+                }
+            }
+
+            a {
+                margin-top: 5px;
+                padding: 10px 30px;
+                background-color: rgba(255, 255, 255, 0.144);
+                color: $color-white;
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 900;
+                text-decoration: none;
+                transition: 0.2s;
+
+                &:hover {
+                    background-color: rgb(255, 255, 255);
+                    color: $color-black;
+                }
+            }
+        }
+    }
+}
+
+// ABOUT-SECTION
+.about {
+    width: 100%;
+    height: auto;
+    background-color: $color-white;
+
+    .title {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        p {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+    }
+
+    .info-me {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        p {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 500;
+            font-size: 25px;
+        }
+    }
+
+    .education {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        .title-education {
+            width: 100%;
+            height: auto;
+            text-align: end;
+
+            p {
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 900;
+                font-size: 40px;
+                text-decoration: underline;
+            }
+        }
+
+        .education-info {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+
+            .education-card {
+                width: 100%;
+                height: auto;
+                // border: 2px solid $color-black;
+                box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.226);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                position: relative;
+
+                @include mobile1 {
+                    align-items: flex-start;
+                    justify-content: center;
+                }
+
+                .utn {
+                    width: 120px;
+                    padding-left: 20px;
+                    padding-bottom: 3px;
+
+                    @include tablet2 {
+                        width: 95px;
+                        padding-left: 10px;
+                    }
+
+                    @include mobile1 {
+                        padding-top: 6px;
+                    }
+                }
+
+                .udemy {
+                    width: 70px;
+                    padding-left: 30px;
+                    padding-bottom: 3px;
+
+                    @include tablet2 {
+                        width: 60px;
+                        padding-left: 20px;
+                    }
+
+                    @include mobile1 {
+                        padding-top: 11px;
+                    }
+                }
+
+                .cui {
+                    width: 70px;
+                    padding-left: 30px;
+                    padding-bottom: 0px;
+
+                    @include tablet2 {
+                        width: 50px;
+                        padding-left: 20px;
+                    }
+
+                    @include mobile1 {
+                        padding-top: 14px;
+                    }
+                }
+
+                p {
+                    font-family: 'Rajdhani', sans-serif;
+                    font-weight: 500;
+                    font-size: 30px;
+                    margin-left: 10px;
+                    padding-bottom: 0px;
+
+                    @include tablet2 {
+                        font-size: 23px;
+                    }
+
+                    @include mobile1 {
+                        margin: 10px;
+                        padding-bottom: 50px;
+                    }
+                }
+
+                a {
+                    background-color: $color-black;
+                    color: $color-white;
+                    position: absolute;
+                    padding: 10px 1.5%;
+                    border: 2px solid $color-black;
+                    border-radius: 5px;
+                    right: 10px;
+                    font-family: 'Rajdhani', sans-serif;
+                    font-weight: 900;
+                    font-size: 15px;
+                    text-decoration: none;
+                    transition: 0.2s;
+
+                    @include mobile1 {
+                        bottom: 10px;
+                        width: 90%;
+                        right: 3%;
+                    }
+
+                    &:hover {
+                        background-color: $color-white;
+                        color: $color-black;
+                    }
+                }
+            }
+        }
+    }
+
+    // SKILLS SET
+    .skills {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        .title-skills {
+            width: 100%;
+            height: auto;
+            text-align: start;
+
+            p {
+                font-family: 'Rajdhani', sans-serif;
+                font-weight: 900;
+                font-size: 40px;
+                text-decoration: underline;
+            }
+        }
+
+        .skills-set {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .skill {
+                width: 120px;
+                height: 120px;
+                background-color: $color-white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.356);
+                border-radius: 10px;
+                transition: 0.3s;
+
+                img {
+                    width: 50%;
+                    transition: 0.3s;
+                }
+
+                &:hover {
+                    box-shadow: 0px 1px 15px 2px rgba(0, 0, 0, 0.664);
+
+                    img {
+                        scale: 1.2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// PROJECTS SECTION
+.projects {
+    width: 100%;
+    height: auto;
+    background-color: $color-white;
+
+    .title {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        text-align: end;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        p {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+    }
+
+    .projects-container {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: column;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        .project:nth-child(2) {
+            @include mobile1 {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .project:nth-child(4) {
+            @include mobile1 {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .project:nth-child(6) {
+            @include mobile1 {
+                flex-direction: column-reverse;
+            }
+        }
+
+        .project {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include mobile1 {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .info {
+                width: 40%;
+                height: 90%;
+
+                @include mobile1 {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 10px;
+                }
+
+                h3 {
+                    font-family: 'Rajdhani', sans-serif;
+                    font-weight: 500;
+                    font-size: 35px;
+                    margin: 0;
+                    margin-top: 5px;
+
+                }
+
+                p {
+                    font-family: 'Rajdhani', sans-serif;
+                    font-weight: 500;
+                    font-size: 17px;
+                }
+
+                .tecs {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 5px;
+
+                    i {
+                        font-size: 35px;
+                    }
+                }
+
+                .buttons {
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 10px;
+
+                    a {
+                        background-color: $color-black;
+                        border: 2px solid $color-black;
+                        color: white;
+                        padding: 10px 15px;
+                        border-radius: 5px;
+                        font-family: 'Rajdhani', sans-serif;
+                        font-weight: 900;
+                        text-decoration: none;
+                        transition: 0.2s;
+
+                        &:hover {
+                            background-color: $color-white;
+                            color: $color-black;
+                        }
+                    }
+                }
+            }
+
+            .img {
+                width: 58%;
+                height: 90%;
+                border-radius: 10px;
+                background-size: cover;
+                // border: 2px solid black;
+                box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.226);
+                transition: 0.2s;
+
+                &:hover {
+                    scale: 1.02;
+                    box-shadow: 10px 10px 1px 1px rgba(0, 0, 0, 0.692);
+                }
+
+                @include mobile1 {
+                    width: 100%;
+                    height: 200px;
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .view-more {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                padding: 20px 100px;
+                background-color: $color-black;
+                color: $color-white;
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 20px;
+                font-weight: 900;
+                text-decoration: none;
+                border: 2px solid $color-black;
+                transition: 0.2s;
+                text-decoration: none;
+
+                @include mobile2 {
+                    font-size: 20px;
+                    padding: 20px 40px;
+                }
+
+                &:hover {
+                    background-color: $color-white;
+                    color: $color-black;
+                }
+            }
+        }
+    }
+}
+
+// CONTACT SECTION
+.contact {
+    width: 100%;
+    height: auto;
+    background-color: $color-white;
+    padding-bottom: 100px;
+
+    .title {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        p {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 900;
+            font-size: 40px;
+            text-decoration: underline;
+        }
+    }
+
+    .form-container {
+        width: 1200px;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet1 {
+            width: 90%;
+        }
+
+        form {
+            width: 800px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-direction: column;
+
+            input {
+                width: 100%;
+                height: 50px;
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 18px;
+                font-weight: 500;
+                padding-left: 10px;
+                border: 1px solid $color-black;
+                border-radius: 0;
+                @include mobile2 {
+                    width: 98.5%;
+                }
+            }
+
+            textarea {
+                width: 100%;
+                resize: none;
+                font-family: 'Rajdhani', sans-serif;
+                font-size: 18px;
+                font-weight: 500;
+                padding-left: 10px;
+                border: 1px solid $color-black;
+                border-radius: 0;
+
+                @include mobile2 {
+                    width: 98.5%;
+                }
+            }
+
+            button {
+                width: 101.8%;
+                height: 50px;
+                border: 1px solid $color-black;
+                background-color: $color-white;
+                color: $color-black;
+                transition: 0.2s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-black;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+
+    .socials {
+        width: 816px;
+        height: 70px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-black;
+        gap: 10px;
+        margin-top: 20px;
+
+        @include mobile1 {
+            width: 92%;
+        }
+
+        i {
+            color: $color-white;
+            font-size: 40px;
+            transition: 0.2s;
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.349);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// FOOTER SECTION
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: $color-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: $color-white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+    }
+}
