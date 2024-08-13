@@ -1,5 +1,4 @@
-const whatsapp = document.getElementById("whatsapp")
-const whatsappMessage = document.getElementById("whatsappMessage")
+
 const sayHi = document.getElementById("hi")
 
 // SAY HI ANIMATION
@@ -22,8 +21,7 @@ navBtn.addEventListener("click", () => {
         nav.classList.add("navMobile")
         navBtn.classList.remove("fa-bars")
         navBtn.classList.add("fa-xmark")
-        whatsapp.style.display = "none"
-        whatsappMessage.style.display = "none"
+       
         nav.style.animation = "none"
         document.body.style.overflowY = "hidden"
     } else {
@@ -31,8 +29,6 @@ navBtn.addEventListener("click", () => {
         nav.classList.add("nav");
         navBtn.classList.remove("fa-xmark")
         navBtn.classList.add("fa-bars")
-        whatsapp.style.display = "block"
-        whatsappMessage.style.display = "block"
         document.body.style.overflowY = "auto"
     }
 });
